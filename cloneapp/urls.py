@@ -22,6 +22,6 @@ urlpatterns = [
     url(r'^$', views.view_index, name='index'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/login/'},
         name='logout'),
+    url(r'^create_user/$', views.view_create_user, name='create_user'),
     url(r'^login/$', auth_views.login, name='login'),
-    # url(r'create_user/$', cloneapp.views.view_create_user, name='create_user'),
 ]
