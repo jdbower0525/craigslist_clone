@@ -20,8 +20,10 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^$', views.view_index, name='index'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/login/'},
+    url(r'^logout/$', auth_views.logout, {'next_page': '/cloneapp/login/'},
         name='logout'),
     url(r'^create_user/$', views.view_create_user, name='create_user'),
     url(r'^login/$', auth_views.login, name='login'),
+    url(r'^main/$', views.view_main, name='main'),
+    url(r'^profile/$', views.view_profile, name='profile'),
 ]

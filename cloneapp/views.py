@@ -21,3 +21,11 @@ def view_create_user(request):
     else:
         form = UserForm()
     return render(request, 'create_user.html', {'form': form})
+
+
+def view_profile(request):
+    return render(request, 'profile.html')
+
+
+def view_main(request):
+    return render(request, 'main.html')

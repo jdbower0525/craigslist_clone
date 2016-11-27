@@ -26,7 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'main'
 # Application definitionpolls.apps.PollsConfig
 INSTALLED_APPS = [
     'cloneapp.apps.CloneappConfig',
