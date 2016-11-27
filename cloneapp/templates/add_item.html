@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Add an Item</title>
+</head>
+<body>
+
+  <h2>Add an Item</h2>
+  <form method="POST" action="">
+    {% csrf_token %}
+    <!-- <p>Movie ID of the movie you are trying to rate</p> -->
+    <!-- <input movie="movie_id" type="text" name="movie" value="{{ movie_id }}">
+    <p>Add a new rating (1-5)</p>
+    <input rating="rating" type="text" name="rating" value="{{ rating }}">
+    <p></p> -->
+    {{ form }}
+    <input type="submit" name="submit" value="Add your rating"/>
+  </form>
+
+</body>
+</html>

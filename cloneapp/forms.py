@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Lister
+from .models import Lister, Item
 
 
 class UserForm(forms.ModelForm):
@@ -14,3 +14,9 @@ class ListerForm(forms.ModelForm):
     class Meta:
         model = Lister
         fields = ['e_mail', 'city']
+
+
+class ItemForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = ['name', 'price', 'description']

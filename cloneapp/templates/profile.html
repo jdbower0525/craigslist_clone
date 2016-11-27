@@ -9,10 +9,10 @@
     <body>
         <center>
             <div class="jumbotron" min-height: 250px>
-        <h1>Profile Page</h1>
+        <h1>{{ user.username }}</h1>
         <p>Your ID: {{ user.id }}</p>
         <p>Your e-mail: {{ user.lister.e_mail }}
-        <p>User City: {{ user.lister.city }}</p>
+        <p>Your City: {{ user.lister.city }}</p>
     </body>
 {% endblock %}
 </html>
