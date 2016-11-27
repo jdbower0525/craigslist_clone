@@ -7,7 +7,12 @@
         <title>Profile Page</title>
     </head>
     <body>
-
+        <center>
+            <div class="jumbotron" min-height: 250px>
+        <h1>Profile Page</h1>
+        <p>Your ID: {{ user.id }}</p>
+        <p>Your e-mail: {{ user.lister.e_mail }}
+        <p>User City: {{ user.lister.city }}</p>
     </body>
 {% endblock %}
 </html>

@@ -9,6 +9,7 @@ class UserForm(models.Model):
 
 class Lister(models.Model):
     user = models.OneToOneField(User, null=True)
+    e_mail = models.CharField(max_length=30)
     city = models.CharField(max_length=20)
 
     def __str__(self):
