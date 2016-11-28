@@ -15,9 +15,9 @@
         <p>Your City: {{ user.lister.city }}</p>
 
         {% for item in all_items %}
-        {% if item.lister_id == user.id %}
-        <h5>{{item.name}}: ${{item.price}} ({{item.description}})</h5>
-        {% endif %}
+            <tr>
+                {{ item.name }}: {{ item.price }} ({{ item.description }})
+            </tr>
         {% endfor %}
     </body>
 {% endblock %}

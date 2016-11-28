@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -11,6 +12,13 @@ class Lister(models.Model):
     user = models.OneToOneField(User, null=True)
     e_mail = models.CharField(max_length=30)
     city = models.CharField(max_length=20)
+
+    @property
+    def url(self):
+        return reverse('profile', args=[self.pk])
+
+    def rating_count(self):
+        return self.item_set.count()
 
     def __str__(self):
         return str(self.id)

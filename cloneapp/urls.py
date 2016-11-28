@@ -27,4 +27,6 @@ urlpatterns = [
     url(r'^main/$', views.view_main, name='main'),
     url(r'^profile/$', views.view_profile, name='profile'),
     url(r'^add_item/$', views.view_add_item, name='add_item'),
+    url((r'^lister/([0-9]+)'), cloneapp.views.view_lister_detail,
+        name='lister_detail'),
 ]

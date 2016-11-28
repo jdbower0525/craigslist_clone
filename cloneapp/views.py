@@ -3,7 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import Lister, Item
+from cloneapp import models
+from cloneapp.models import Lister, Item
 from cloneapp.forms import UserForm, ListerForm, ItemForm
 # Create your views here.
 
@@ -48,8 +49,16 @@ def view_add_item(request):
 
 
 def view_profile(request):
-    return render(request, 'profile.html')
+    all_items = models.Item.objects.all()
+    return render(request, 'profile.html', {'all_items': all_items})
 
 
 def view_main(request):
     return render(request, 'main.html')
+
+
+def view_lister_detail(request, d):
+    lister = models.Lister.objects.get(pk=d)
+    all_items = lister.item_set.order_by("-price")
+    return render(request, 'lister_detail.html',
+                  {'lister': lister, 'all_items': all_items})
